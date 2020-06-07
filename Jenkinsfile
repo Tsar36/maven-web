@@ -14,7 +14,6 @@ pipeline{
             steps{
                 script{
                     sh echo "Hello World"
-#                    git url: "https://github.com/cyborgdeveloper/maven-web.git"
                 }
                 script{
                     maven("clean package")
