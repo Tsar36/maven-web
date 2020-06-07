@@ -6,3 +6,4 @@ Run `mvn package` to get the `.war`.
 
 Execute `mvn archetype:generate -DgroupId=tech.cyborgdeveloper -DartifactId=maven-web -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false`.
 
+### Use Jenkinsfile for Jenkins-build pipeline Maven project
