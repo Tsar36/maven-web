@@ -22,9 +22,7 @@ pipeline{
         }
         stage("Upload to Nexus"){ /// info took from pom.xml file in github repo
             steps{
-                script{
-                    sh echo "Ready to deploy"
-                }
+                echo "Ready to DEPLOY"
             }
         }
     }
