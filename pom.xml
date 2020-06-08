@@ -8,7 +8,7 @@
   <version>1.0</version>
 
   <name>maven-web</name>
-  #<name>Cyborg Developer Maven Webapp</name>
+///  <name>Cyborg Developer Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
   <dependencies>
