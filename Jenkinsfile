@@ -13,14 +13,16 @@ pipeline{
         stage("Build"){
             steps{
                 script{
-                    git 'https://github.com/Tsar36/maven-web.git'
+                    git url: "https://github.com/Tsar36/maven-web.git"
                 }
                 script{
                     maven("clean package")
                 }
             }
         }
-        stage("Upload to Nexus"){ /// info took from pom.xml file in github repo
+    }
+}
+        stage("Upload to Nexus"){
             steps{
                 nexusArtifactUploader artifacts: [
                     [
