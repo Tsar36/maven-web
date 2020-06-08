@@ -26,7 +26,7 @@ pipeline{
                     [
                         artifactId: 'maven-web', 
                         classifier: '', 
-                        file: 'target/Cyborg Developer Maven Webapp-1.0.war', 
+                        file: 'target/maven-web-1.0.war', 
                         type: 'war'
                     ]
                 ], 
