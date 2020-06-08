@@ -7,7 +7,7 @@ pipeline{
         timestamps()
     }
     tools { 
-        maven 'Maven 3.6.3'
+        maven 'M3'
     }
     stages{
         stage("Build"){
