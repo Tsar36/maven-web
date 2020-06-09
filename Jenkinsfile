@@ -27,7 +27,7 @@ pipeline{
             }
 
 //                nexusPublisher nexusInstanceId: 'Nexus', nexusRepositoryId: 'MyPipeLine_Maven-release', packages: [[$class: 'Maven', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/***.jar']], mavenCoordinate: [artifactId: 'maven-web', groupId: '***', packaging: 'jar', version: '${BUILD_NUMBER}']]]
-            }
+//            }
         }
     }
 }
