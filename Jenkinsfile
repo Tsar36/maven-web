@@ -21,9 +21,38 @@ pipeline{
             }
         }
     }
+         stage("Upload to Nexus"){
+             steps{
+                 def maven(def target){
+    sh "mvn $target"
 }
-//         stage("Upload to Nexus"){
-//             steps{
+pipeline{
+    agent any
+    options{
+        timestamps()
+    }
+    tools { 
+        maven 'M3'
+    }
+    stages{
+        stage("Build"){
+            steps{
+                script{
+                    git 'https://github.com/Tsar36/maven-web.git'
+                }
+                script{
+                    maven("clean package")
+                }
+            }
+        }
+        stage("Upload to Nexus"){
+            steps{
+                sh 'echo "Ready to deploy"'
+                nexusPublisher nexusInstanceId: 'Nexus', nexusRepositoryId: 'MyPipeLine_Maven-release', packages: [[$class: 'Maven', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/***.jar']], mavenCoordinate: [artifactId: 'maven-web', groupId: '***', packaging: 'jar', version: '${BUILD_NUMBER}']]]
+            }
+        }
+    }
+}
 //                 nexusArtifactUploader artifacts: [
 //                     [
 //                         artifactId: 'maven-web', 
