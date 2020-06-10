@@ -16,7 +16,7 @@ pipeline{
                     git 'https://github.com/Tsar36/maven-web.git'
                 }
                 script{
-                    maven("clean package")
+                    maven("clean package deploy")
                 }
             }
         }
