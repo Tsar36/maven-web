@@ -26,12 +26,12 @@
     <repository>
          <id>nexus3</id>
          <name>MyCo Internal Repository</name>
-         <url>http://34.69.254.210:8081/repository/MyPipeLine_Maven-release/</url>
+         <url>http://35.188.143.59:8081/repository/MyPipeLine_Maven-release/</url>
     </repository>
     <snapshotRepository>
          <id>nexus3</id>
          <name>Your Snapshot Repository</name>
-         <url>http://34.69.254.210:8081/repository/MyPipeLine_Maven-release/</url>
+         <url>http://35.188.143.59:8081/repository/MyPipeLine_Maven-release/</url>
     </snapshotRepository>
 </distributionManagement>
 </project>
