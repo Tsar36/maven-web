@@ -30,8 +30,8 @@
     </repository>
     <snapshotRepository>
          <id>nexus3</id>
-         <name>maven-snapshots</name>
-         <url>http://104.155.139.146:8081/repository/maven-snapshots/</url>
+         <name>Maven_Free_project</name>
+         <url>http://104.155.139.146:8081/repository/Maven_Free_project/</url>
     </snapshotRepository>
 </distributionManagement>
 </project>
