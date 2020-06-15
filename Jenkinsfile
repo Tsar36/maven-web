@@ -8,7 +8,7 @@ pipeline{
     }
     tools { 
         maven 'M3'
-//        mavenSettingsConfig: '6a4d887d-917e-4557-8599-ee1643720bf9'
+        mavenSettingsConfig: '6a4d887d-917e-4557-8599-ee1643720bf9'
     }
     stages{
         stage("Build"){
@@ -17,7 +17,7 @@ pipeline{
                     git 'https://github.com/Tsar36/maven-web.git'
                 }
                 script{
-                    maven("clean package deploy")
+                    maven("clean package")
                 }
             }
         }
