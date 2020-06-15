@@ -24,7 +24,7 @@ pipeline{
         stage("Upload to Nexus"){
             steps{
                 sh 'echo "Ready to deploy"'
-                nexusPublisher nexusInstanceId: '3.23.0-03', nexusRepositoryId: 'MyPipeLine_Maven-release', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/maven-web.war']], mavenCoordinate: [artifactId: 'maven-web', groupId: 'tech.cyborgdeveloper', packaging: 'war', version: '1.0.0']]]
+//                nexusPublisher nexusInstanceId: '3.23.0-03', nexusRepositoryId: 'MyPipeLine_Maven-release', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/maven-web.war']], mavenCoordinate: [artifactId: 'maven-web', groupId: 'tech.cyborgdeveloper', packaging: 'war', version: '1.0.0']]]
             }
         }
     }
