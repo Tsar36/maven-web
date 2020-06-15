@@ -25,13 +25,13 @@
   <distributionManagement>
     <repository>
          <id>nexus3</id>
-         <name>Cyborg Developer Maven Webapp</name>
+         <name>MyPipeLine_Maven-release/name>
          <url>http://35.193.73.135:8081/repository/MyPipeLine_Maven-release</url>
     </repository>
     <snapshotRepository>
          <id>nexus3</id>
-         <name>MyPipeLine_Maven-release</name>
-         <url>http://35.193.73.135:8081/repository/MyPipeLine_Maven-release</url>
+         <name>maven-snapshots</name>
+         <url>http://35.193.73.135:8081/repository/maven-snapshots</url>
     </snapshotRepository>
 </distributionManagement>
 </project>
