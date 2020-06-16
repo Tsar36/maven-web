@@ -25,8 +25,8 @@
   <distributionManagement>
     <repository>
          <id>nexus3</id>
-         <name>Maven_Free_project</name>
-         <url>http://104.155.139.146:8081/repository/Maven_Free_project/</url>
+         <name>MyPipeLine_Maven-release</name>
+         <url>http://104.155.139.146:8081/repository/MyPipeLine_Maven-release/</url>
     </repository>
     <snapshotRepository>
          <id>nexus3</id>
