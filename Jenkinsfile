@@ -8,7 +8,7 @@ pipeline{
     }
     tools { 
         maven 'M3'
-//        mavenSettingsConfig: '6a4d887d-917e-4557-8599-ee1643720bf9'
+        mavenSettingsConfig: '6a4d887d-917e-4557-8599-ee1643720bf9'
     }
     stages{
         stage("Build"){
@@ -24,7 +24,8 @@ pipeline{
         stage("Deploy to nexusPublisher"){
         	steps{
         		script{
-        			nexusPublisher nexusInstanceId: '3.23.0-03', nexusRepositoryId: 'MyPipeLine_Maven-release', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/maven-web.war']], mavenCoordinate: [artifactId: 'maven-web', groupId: 'tech.cyborgdeveloper', packaging: 'war', version: '1.0.0']]] 
+                    sh echo "Deploying"
+//        			nexusPublisher nexusInstanceId: '3.23.0-03', nexusRepositoryId: 'MyPipeLine_Maven-release', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/maven-web.war']], mavenCoordinate: [artifactId: 'maven-web', groupId: 'tech.cyborgdeveloper', packaging: 'war', version: '1.0.0']]] 
         		}    		 	
         	}
         }
