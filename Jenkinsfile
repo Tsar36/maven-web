@@ -8,7 +8,7 @@ pipeline{
     }
     tools { 
         maven 'M3'
-        mavenSettingsConfig: '6a4d887d-917e-4557-8599-ee1643720bf9'
+//        mavenSettingsConfig: '6a4d887d-917e-4557-8599-ee1643720bf9'
     }
     stages{
         stage("Build"){
@@ -17,17 +17,9 @@ pipeline{
                     git 'https://github.com/Tsar36/maven-web.git'
                 }
                 script{
-                    maven("clean package deploy")
+                    withMaven(maven: 'M3', mavenSettingsConfig: '6a4d887d-917e-4557-8599-ee1643720bf9'){
+                        sh "mvn clean package deploy"
+                    }
                 }
             }
         }
-        stage("Deploy to nexusPublisher"){
-        	steps{
-                script{
-                    sh echo "Deploying"
-//        			nexusPublisher nexusInstanceId: '3.23.0-03', nexusRepositoryId: 'MyPipeLine_Maven-release', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/maven-web.war']], mavenCoordinate: [artifactId: 'maven-web', groupId: 'tech.cyborgdeveloper', packaging: 'war', version: '1.0.0']]] 
-        		}    		 	
-        	}
-        }
-    }
-}
