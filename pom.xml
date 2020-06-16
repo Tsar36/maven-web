@@ -22,7 +22,7 @@
   <build>
     <finalName>maven-web</finalName>
   </build>
-<!--   <distributionManagement>
+  <distributionManagement>
     <repository>
          <id>nexus3</id>
          <name>Maven_Free_project</name>
@@ -33,5 +33,5 @@
          <name>Maven_Free_project</name>
          <url>http://104.155.139.146:8081/repository/Maven_Free_project/</url>
     </snapshotRepository>
-</distributionManagement> -->
+</distributionManagement>
 </project>
