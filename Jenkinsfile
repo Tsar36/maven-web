@@ -6,7 +6,7 @@ pipeline{
     options{
         timestamps()
     }
-    tools { 
+    tools {
         maven 'M3'
     }
     stages{
@@ -32,8 +32,8 @@ pipeline{
                     ssh tomcat@34.69.182.55 /opt/tomcat8/bin/startup.sh
                     """ }
                 }
+                }
             }
         }
     }
-}
 }
