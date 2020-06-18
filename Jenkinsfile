@@ -21,7 +21,6 @@ pipeline{
                         sh "mv target/*.war target/myweb.war"
                     }
                 }
-            }
         stage("Deploy to tomcat"){
             steps{
                 script{
@@ -31,6 +30,7 @@ pipeline{
                     ssh tomcat@34.69.182.55 /opt/tomcat8/bin/shutdown.sh
                     ssh tomcat@34.69.182.55 /opt/tomcat8/bin/startup.sh
                     """ }
+                }
                 }
                 }
             }
