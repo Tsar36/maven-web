@@ -30,8 +30,8 @@ pipeline{
                         ssh tomcat@34.69.182.55 /opt/tomcat8/bin/startup.sh
                         """
                     }
-                    }
-                }
+            }
+        }
             }
         }
     }
