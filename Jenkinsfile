@@ -23,7 +23,7 @@ pipeline{
                 }
             }
         }
-        stage("Check"){
+        steps{
             post {
                 success {
                     echo "${env.BUILD_URL} has result success"
