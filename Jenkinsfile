@@ -23,14 +23,14 @@ pipeline{
                 }
             }
         }
-        post {
-            success {
-                echo "${env.BUILD_URL} has result success"
-            }
-            failure {
-                echo "${env.BUILD_URL} has result fail"
-            }
-           }
+    post {
+        success {
+            echo "${env.BUILD_URL} has result success"
+        }
+        failure {
+            echo "${env.BUILD_URL} has result fail"
+        }
+    }
         stage("Deploy to tomcat"){
             steps{
                     sshagent(['tomcat']) {
