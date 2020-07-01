@@ -28,7 +28,7 @@ pipeline{
 //                    echo "${env.BUILD_URL} has result success"
                 }
                 failure {
-                    echo "${BUILD_NUMBER} has result SUCCESS"
+                    echo "${BUILD_NUMBER} has result FAILURE"
 //                    echo "${env.BUILD_URL} has result fail"
                 }
             }
