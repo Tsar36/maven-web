@@ -25,11 +25,11 @@ pipeline{
             post {
                 success {
                     echo " The job number ${BUILD_NUMBER} has result SUCCESS"
-//                    echo "${env.BUILD_URL} has result success"
+                    echo "${env.BUILD_URL} has result success"
                 }
                 failure {
                     echo "The job number ${BUILD_NUMBER} has result FAILURE"
-//                    echo "${env.BUILD_URL} has result fail"
+                    echo "${env.BUILD_URL} has result fail"
                 }
             }
         }
