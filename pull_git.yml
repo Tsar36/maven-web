@@ -1,0 +1,11 @@
+---
+- git:
+    repo: 'https://github.com/Tsar36/maven-web.git'
+    dest: /srv/checkout
+    update: no
+
+- git:
+    repo: 'https://foosball.example.org/path/to/repo.git'
+    dest: /srv/checkout
+    clone: no
+    update: no
