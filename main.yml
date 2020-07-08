@@ -1,0 +1,30 @@
+- name: Start Tomcat
+  command: "nohup /opt/tomcat/apache-tomcat-8.5.56/bin/catalina.sh start"
+- name: deploing war-file from nexus repositories
+  get_url:
+   url: http://10.128.0.5:8081/repository/maven-snapshots/tech/cyborgdeveloper/maven-web/1.0-SNAPSHOT/maven-web-1.0-20200701.103200-4.war
+   dest: /opt/tomcat/apache-tomcat-8.5.56/webapps
+- name: Restart Tomcat
+  shell:
+    /opt/tomcat/apache-tomcat-8.5.56/bin/shutdown.sh
+    sleep 10
+    /opt/tomcat/apache-tomcat-8.5.56/bin/startup.sh
+#- name: Start Nexus
+#  command: "sh /home/seriy_tsar/nexus_run"
+- name: Pull file from source
+  git:
+   repo: 'https://github.com/Tsar36/maven-web.git'
+   dest: /etc/ansible/git_copy
+- name: "cron"
+  cron:
+    name: Sheduled the task crontab
+    minute: "{{(item | int * 5) % 60}}"
+    hour: "*"
+    day: "*"
+    weekday: "*"
+    month: "*"
+    year: "*"
+    job:
+      command: /etc/ansible/ansible-playbook playbook.yml
+#- name: Create crontab entry to clone/pull git repository
+#      template: src=templates/etc_cron.d_ansible-pull.j2 dest=/etc/cron.d/ansible-pull owner=root group=root mode=0644
