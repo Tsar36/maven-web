@@ -33,6 +33,9 @@ pipeline{
                 }
             }
         }
+        stage("Deploy image to Docker-Hub"){
+            echo "start deploy"
+        }
         // stage("Deploy to tomcat"){
         //     steps{
         //             sshagent(['tomcat']) {
