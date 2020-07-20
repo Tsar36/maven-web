@@ -1,4 +1,5 @@
 def maven(def target){
+    def app
     sh "mvn $target"
 }
 pipeline{
