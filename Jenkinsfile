@@ -1,3 +1,4 @@
+def app
 def maven(def target){
     sh "mvn $target"
 }
@@ -33,20 +34,20 @@ pipeline{
                 }
             }
         }
-        stage("Deploy image to Docker-Hub"){
-            echo "start deploy"
+        
+        stage("Build image"){
+            steps{
+             app = docker.build("tsar36/maven-web")   
+            }
         }
-        // stage("Deploy to tomcat"){
-        //     steps{
-        //             sshagent(['tomcat']) {
-        //                 sh """
-        //                     scp -o StrictHostKeyChecking=no target/myweb.war tomcat@34.71.122.241:/opt/tomcat8/webapps
-        //                     ssh tomcat@34.71.122.241 /opt/tomcat8/bin/shutdown.sh
-        //                     ssh tomcat@34.71.122.241 /opt/tomcat8/bin/startup.sh
-        //                 """
-        //             }
-        //         }
-        //     }
-        // }
+        
+        stage("Push Image to Docker-Hub"){
+            steps{
+                withDockerRegistry(credentialsId: 'docker-hub-cec', url: 'https://registry.hub.docker.com/') {
+                    app.push("${env.BUILD_NUMBER}")
+                    app.push("latest")
+                }
+            }
+        }
     }
 }
