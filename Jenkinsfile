@@ -37,15 +37,19 @@ pipeline{
         
         stage("Build image"){
             steps{
-             app = docker.build("tsar36/maven-web")   
+                script{
+                    app = docker.build("tsar36/maven-web")
+                }
             }
         }
         
         stage("Push Image to Docker-Hub"){
             steps{
-                withDockerRegistry(credentialsId: 'docker-hub-cec', url: 'https://registry.hub.docker.com/') {
-                    app.push("${env.BUILD_NUMBER}")
-                    app.push("latest")
+                script{
+                    withDockerRegistry(credentialsId: 'docker-hub-cec', url: 'https://registry.hub.docker.com/') {
+                        app.push("${env.BUILD_NUMBER}")
+                        app.push("latest")
+                    }
                 }
             }
         }
