@@ -38,7 +38,7 @@ pipeline{
         stage("Build image"){
             steps{
                 script{
-                    app = docker.build("target/myweb.war.${BUILD_NUMBER}")
+                    app = docker.build("tsar36/maven-web")
                 }
             }
         }
